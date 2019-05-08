@@ -7,54 +7,27 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  weeks = [];
-  connectedTo = [];
   
-  constructor(){
-    this.weeks = [
-      {
-        id:'week-1',
-        weeklist:[
-          "item 1",
-          "item 2",
-          "item 3",
-          "item 4",
-          "item 5"
-        ]
-      },{
-        id:'week-2',
-        weeklist:[
-          "item 1",
-          "item 2",
-          "item 3",
-          "item 4",
-          "item 5"
-        ]
-      },{
-        id:'week-3',
-        weeklist:[
-          "item 1",
-          "item 2",
-          "item 3",
-          "item 4",
-          "item 5"
-        ]
-      },{
-        id:'week-4',
-        weeklist:[
-          "item 1",
-          "item 2",
-          "item 3",
-          "item 4",
-          "item 5"
-        ]
-      },
-    ];
-    for (let week of this.weeks) {
-      this.connectedTo.push(week.id);
-    };
-  }
+  
+  todo = [
+    'Get to work',
+    'Pick up groceries',
+    'Go home',
+    'Fall asleep'
+  ];
+
+  done = [
+    'Get up',
+    'Brush teeth',
+    'Take a shower',
+    'Check e-mail',
+    'Walk dog'
+  ];
+
+  review = [
+    'Take bath',
+    'Wash car',
+  ];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
